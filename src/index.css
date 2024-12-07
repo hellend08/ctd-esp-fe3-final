@@ -11,45 +11,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-}
 
-h1{
+h1, h4{
   text-align: center;
 }
 
 nav{
   display: flex;
-  width: 80vw;
   justify-content: flex-start;
-  padding: 1rem;
+  padding: .6rem 1rem;
+  align-items: center;
+  background-color: #d3e3fdff;
+  margin-bottom: 2rem;
 }
 
 a{
-  color: #000;
+  color: rgb(39, 39, 39);
   text-decoration: none;
-  margin: 5px;
+  margin: 0px 12px;
   cursor: pointer;
 }
+
 a:hover{
   color: rgb(136, 136, 136);
-} 
+}
+
+.button-theme {
+  margin-left: auto;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border-radius: 5px;
+  width: 135px;
+  height: 45px;
+  border: 0px;
+}
+
+img {
+  border-radius: 3px;
+}
 
 footer {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
+  padding: 1.2rem 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
+  background-color: #E8F0FE;
   height: 40px;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  box-shadow: 0 1px 6px 0 #20212447;
 }
 
 footer > img{
@@ -58,16 +69,22 @@ footer > img{
 }
 footer > p{
   margin: 0;
-  padding-top: 0.7rem;
+  padding-top: 0.5rem;
 }
 
-form{
+.r-sociales {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
+  justify-content: end;
+  margin-left: auto;
+  align-items: center;
+}
+
+.r-sociales img{
+  width: 20px;
+  height: 20px;
+  background-color: rgb(39, 39, 39);
+  padding: 5px;
+  border-radius: 20%;
 }
 
 .card{
@@ -75,13 +92,37 @@ form{
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+  width: 245px;
+  height: 400px;
   padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+  border: 1.5px solid #20212447;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}
+
+.card a {
+  color: rgb(39, 39, 39);
 }
 
 .card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+  border: 1.5px solid #007BFF;
+}
+
+.card button {
+  width: 205px;
+  padding: .5rem;
+  border-radius: 8px;
+  border: none;
+  color: #dddddd;
+  cursor: pointer;
+}
+
+.deleteFav {
+  background-color: red;
+}
+
+.addFav {
+  background-color: #007BFF;
 }
 
 .card-grid{
@@ -91,32 +132,143 @@ form{
   width: 90vw;
   height: auto;
   flex-wrap: wrap;
+  margin: 2rem auto 0;
+}
+
+.contact-container {
+  text-align: center;
+  width: 42%;
+  margin: auto;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   margin: 0 auto;
+  border: 2px solid #007BFF;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+}
+
+.form h3 {
+  color: #007BFF;
+}
+
+.contact-container .form div {
+  margin: .5rem auto;
+  width: 72%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-container label {
+  width: 136px;
+  text-align: right;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+input, textarea {
+  border-radius: 5px;
+  border: 1.5px solid #20212447;
+  padding: .2rem .4rem;
+}
+
+.contact-container input {
+  height: 20px;
+  width: 180px;
+}
+
+.contact-container textarea {
+  width: 70%;
+  height: 100px;
+  margin: 1rem auto;
+}
+
+.btn-submit {
+  margin: 1rem auto;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border-radius: 5px;
+  width: 72%;
+  height: 40px;
+  border: 0px;
+}
+
+.color-name {
+  color: #007BFF;
+}
+
+section button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #007BFF;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
 }
 
 table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 60%;
+  margin: 1rem auto;
+  display: table;
+  border: 1.5px solid #007BFF;
+  border-radius: 5px;
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1.5px solid #007BFF;
   text-align: left;
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+th {
+  color: #007BFF;
 }
 
+/* style dark mode */
+
 .dark{
-  background-color: #12121296;
-  color: white;
+  background-color: rgb(60, 60, 60);
+  color: #dddddd;
 }
 .dark > a {
-  color: white;
+  color: #dddddd;
+}
+
+.dark nav {
+  background-color: rgb(39, 39, 39);
+}
+
+.dark nav a {
+  color: #dddddd;
+}
+
+.dark .button-theme, .dark .btn-submit {
+  background-color: #004a77ff;
+  color: #c2e7ffff;
+}
+
+.dark footer {
+  background-color: #004a77ff;
+  border-top: none;
+}
+
+.dark .card {
+  background-color: rgb(39, 39, 39);
+}
+
+.dark .card a {
+  color: #dddddd;
 }

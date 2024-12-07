@@ -1,19 +1,65 @@
-import React from 'react'
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Detail = () => {
- 
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+  const [card, setCard] = useState({});
+  const params = useParams();
+  const url = "https://jsonplaceholder.typicode.com/users/" + params.id;
+
+  useEffect(() => {
+    axios(url)
+      .then((res) => {
+        setCard(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [params.id, url]);
 
   return (
     <>
-      <h1>Detail Dentist id </h1>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
+      <h1>
+        Detalle del dentista <span className="color-name">{card.name}</span>
+      </h1>
+      <table>
+      <tbody>
+        <tr>
+          <th>
+            <h4>Nombre dentista</h4>
+          </th>
+          <td>
+            <h4>{card.name}</h4>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <h4>Correo electrónico</h4>
+          </th>
+          <td>
+            <h4>{card.email}</h4>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <h4>Teléfono</h4>
+          </th>
+          <td>
+            <h4>{card.phone}</h4>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <h4>Página web</h4>
+          </th>
+          <td>
+            <h4>{card.website}</h4>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </>
-  )
-}
+  );
+};
 
-export default Detail
+export default Detail;
